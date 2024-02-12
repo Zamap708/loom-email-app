@@ -1,25 +1,45 @@
 import React from "react";
-import ComposeEmail from "./ComposeEmail";
 
-export default function Emails() {
+export default function page() {
   return (
-    <section className="px-2 w-full h-full flex justify-between gap-4">
-      <div className="w-1/6 shadow bg-white/50 rounded overflow-hidden">
-        <div className="flex flex-col gap-2 p-2">
-          <span className="w-full p-1 flex justify-start items-center">
-            <h1>Emails</h1>
-          </span>
-          <ul className="w-full flex flex-col gap-2">
-            <li className="w-full p-2 bg-white rounded shadow"> Compose Email</li>
-            <li className="w-full p-2 bg-white rounded shadow"> Templates</li>
-            <li className="w-full p-2 bg-white rounded shadow"> Sent </li>
-            <li className="w-full p-2 bg-white rounded shadow"> Deleted </li>
-          </ul>
+    <div className="w-full h-full flex flex-col gap-8">
+      <h1>Compose Email</h1>
+      <form
+        action=""
+        method="post"
+        className="w-full h-full flex flex-col items-start justify-start gap-2"
+      >
+        <input
+          type="text"
+          name=""
+          className="w-full rounded shadow p-2"
+          id=""
+          placeholder="From"
+        />
+        <input
+          type="text"
+          name=""
+          className="w-full rounded shadow p-2"
+          id=""
+          placeholder="Add Clients"
+        />
+        <textarea
+          name=""
+          className="w-full rounded shadow p-2"
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Enter message here"
+        ></textarea>
+        <div className="flex justify-center items-center gap-2">
+          <button className="p-2 px-4 rounded bg-white shadow hover:scale-105">
+            Save Template
+          </button>
+          <button className="p-2 px-4 rounded bg-sky-400 text-white shadow hover:scale-105">
+            Send
+          </button>
         </div>
-      </div>
-      <div className="w-5/6 shadow p-6 h-full bg-white/50 rounded">
-        <ComposeEmail />
-      </div>
-    </section>
+      </form>
+    </div>
   );
 }

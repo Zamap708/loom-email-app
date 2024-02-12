@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Clients() {
   return (
-    <section className="px-6 w-full h-full flex flex-col gap-8">
+    <section className="p-6 w-full h-full flex flex-col gap-8 bg-white/50">
       <div className="w-full h-10 flex items-center justify-between">
         <div className="w-1/6 flex items-center justify-between">
           <h1>Clients</h1>
@@ -16,7 +16,7 @@ export default function Clients() {
       </div>
 
       <div className="flex flex-col justify-center items-center gap-4">
-        <div className="w-full flex items-center justify-start">
+        <div className="w-full flex items-center justify-start p-1">
           <span className="h-full flex justify-start items-center gap-2 px-2">
             <input
               type="checkbox"
@@ -37,7 +37,7 @@ export default function Clients() {
             <span className="px-2">Work Number</span>
           </div>
         </div>
-        <div className="w-full bg-white">
+        <div className="w-full p-1 bg-white rounded">
           {/*Clients will be fetched from server */}
           <div className="w-full flex items-center justify-start">
             <span className="h-full flex justify-start items-center gap-2 px-2">
