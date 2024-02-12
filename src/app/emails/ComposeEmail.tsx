@@ -32,11 +32,11 @@ export default function ComposeEmail() {
           placeholder="Enter message here"
         ></textarea>
         <div className="flex justify-center items-center gap-2">
+          <button className="p-2 px-4 rounded bg-white shadow hover:scale-105">
+            Save Template
+          </button>
           <button className="p-2 px-4 rounded bg-sky-400 text-white shadow hover:scale-105">
             Send
-          </button>
-          <button className="p-2 px-4 rounded bg-white shadow hover:scale-105">
-            Save
           </button>
         </div>
       </form>
