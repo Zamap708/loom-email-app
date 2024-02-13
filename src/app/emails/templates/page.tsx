@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Template() {
   return (
@@ -8,9 +9,11 @@ export default function Template() {
           <h1>Templates</h1>
         </div>
         <div className="flex items-center justify-between gap-4">
-          <button className="p-2 px-4 shadow bg-sky-400 text-white rounded">
-            Add Template
-          </button>
+          <Link href="/emails">
+            <button className="p-2 px-4 shadow bg-sky-400 text-white rounded">
+              Add Template
+            </button>
+          </Link>
           <button className="p-2 px-4 shadow bg-white rounded">Filter</button>
         </div>
       </div>

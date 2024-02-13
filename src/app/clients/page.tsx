@@ -42,8 +42,8 @@ export default function Clients() {
             <span className="px-2">First Name</span>
             <span className="px-2">Second Name</span>
             <span className="px-2">LinkedIn Profile</span>
-            <span className="px-2">Personal Client</span>
-            <span className="px-2">Work Client</span>
+            <span className="px-2">Personal Email</span>
+            <span className="px-2">Work Email</span>
             <span className="px-2">Personal Number</span>
             <span className="px-2">Work Number</span>
           </div>
