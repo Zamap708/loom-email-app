@@ -2,12 +2,14 @@ import React from "react";
 
 export default function page() {
   return (
-    <div className="w-full h-full flex flex-col gap-8">
-      <h1>Compose Email</h1>
+    <div className="w-full h-full flex flex-col gap-8 ">
+      <div className="w-full h-10 px-2 py-8 flex items-center justify-between bg-white/50 rounded overflow-hidden">
+        <h1>Compose Email</h1>
+      </div>
       <form
         action=""
         method="post"
-        className="w-full h-full flex flex-col items-start justify-start gap-2"
+        className="w-full h-full p-2 flex flex-col items-start justify-start gap-2 bg-white/50"
       >
         <input
           type="text"

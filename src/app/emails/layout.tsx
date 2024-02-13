@@ -34,9 +34,9 @@ export default function layout({
                 History
               </li>
             </Link>
-            <Link href="/emails/deleted" className="">
+            <Link href="/emails/trash" className="">
               <li className="w-full p-2 bg-white rounded shadow flex justify-start items-center">
-                Deleted
+                Trash
               </li>
             </Link>
           </ul>

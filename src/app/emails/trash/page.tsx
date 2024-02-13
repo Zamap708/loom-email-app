@@ -1,16 +1,13 @@
 import React from "react";
 
-export default function Template() {
+export default function Trash() {
   return (
     <section className=" w-full h-full flex flex-col gap-8">
-      <div className="w-full h-10 px-2 py-8 flex items-center justify-between  bg-white/50 rounded">
-        <div className="flex items-center justify-between">
-          <h1>Templates</h1>
+      <div className="w-full h-10 px-2 py-8 flex items-center justify-between bg-white/50 rounded">
+        <div className="w-1/6 flex items-center justify-between ">
+          <h1>Trash</h1>
         </div>
         <div className="flex items-center justify-between gap-4">
-          <button className="p-2 px-4 shadow bg-sky-400 text-white rounded">
-            Add Template
-          </button>
           <button className="p-2 px-4 shadow bg-white rounded">Filter</button>
         </div>
       </div>
@@ -20,11 +17,11 @@ export default function Template() {
           <span className="h-full flex justify-start items-center gap-2 px-2">
             <input
               type="checkbox"
-              name="TemplateselectAll"
-              id="TemplateselectAll"
+              name="TrashselectAll"
+              id="TrashselectAll"
               className="h-full"
             />
-            {/* <label htmlFor="TemplateselectAll">Select All</label> */}
+            {/* <label htmlFor="TrashselectAll">Select All</label> */}
           </span>
           <div className="w-full text-gray-500 grid grid-flow-col auto-cols-auto">
             <span className="px-2 w-1/2">ID</span>
@@ -36,16 +33,16 @@ export default function Template() {
           </div>
         </div>
         <div className="w-full bg-white rounded shadow">
-          {/*Templates will be fetched from server */}
+          {/*Trashs will be fetched from server */}
           <div className="w-full flex items-center justify-start p-1">
             <span className="h-full flex justify-start items-center gap-2 px-2">
               <input
                 type="checkbox"
-                name="Templateselect"
-                id="Templateselect"
+                name="Trashselect"
+                id="Trashselect"
                 className="h-full"
               />
-              {/* <label htmlFor="TemplateselectAll">Select All</label> */}
+              {/* <label htmlFor="TrashselectAll">Select All</label> */}
             </span>
             <div className="w-full text-gray-500 grid grid-flow-col auto-cols-auto">
               <span className="px-2 truncate w-1/2">ID</span>

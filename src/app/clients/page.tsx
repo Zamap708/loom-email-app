@@ -1,21 +1,32 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import AddClient from "./AddClient";
 
 export default function Clients() {
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const handleModal = () => {
+    setShowModal(!showModal);
+  };
   return (
     <section className="p-6 w-full h-full flex flex-col gap-8 bg-white/50">
-      <div className="w-full h-10 flex items-center justify-between">
-        <div className="w-1/6 flex items-center justify-between">
+      {showModal ? <AddClient handleModal={handleModal} /> : ""}
+      <div className="w-full h-10 px-2 py-8 flex items-center justify-between bg-white/50 rounded">
+        <div className="flex items-center justify-between">
           <h1>Clients</h1>
         </div>
-        <div className="w-1/6 flex items-center justify-between">
-          <button className="p-4 px-5 shadow bg-sky-400 text-white rounded">
+        <div className="flex items-center justify-between gap-4">
+          <button
+            className="p-2 px-4 shadow bg-sky-400 text-white rounded"
+            onClick={handleModal}
+          >
             Add Client
           </button>
-          <button className="p-4 px-5 shadow bg-white rounded">Filter</button>
+          <button className="p-2 px-4 shadow bg-white rounded">Filter</button>
         </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center gap-4">
+      <div className=" h-full p-2 flex flex-col justify-start items-center gap-4 bg-white/50 rounded overflow-y-auto">
         <div className="w-full flex items-center justify-start p-1">
           <span className="h-full flex justify-start items-center gap-2 px-2">
             <input
