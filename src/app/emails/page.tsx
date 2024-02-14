@@ -29,8 +29,8 @@ export default function page() {
           name=""
           className="w-full rounded shadow p-2"
           id=""
-          cols="30"
-          rows="10"
+          cols={30}
+          rows={10}
           placeholder="Enter message here"
         ></textarea>
         <div className="flex justify-center items-center gap-2">

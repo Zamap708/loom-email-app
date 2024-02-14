@@ -14,7 +14,7 @@ export default function Modal(props: ModalProps) {
         onClick={handleModal}
         className="absolute top-0 left-0 w-screen h-screen"
       ></div>
-      <div className="w-2/3 aspect-video p-6 bg-stone-200 z-50 rounded shadow">
+      <div className="w-3/5 p-6 bg-stone-200 z-50 rounded shadow">
         {children}
       </div>
     </div>

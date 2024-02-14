@@ -1,15 +1,13 @@
 import React, { ReactNode } from "react";
 import Link from "next/link";
-import ComposeEmail from "./page";
-
 interface LayoutProps {
   children: ReactNode;
-  showComponent: boolean;
+  // showComponent: boolean;
 }
 
 export default function layout({
   children,
-  showComponent,
+  // showComponent,
 }: LayoutProps): JSX.Element {
   return (
     <section className="px-2 w-full h-full flex justify-between gap-4">
@@ -19,12 +17,12 @@ export default function layout({
             <h1>Emails</h1>
           </span>
           <ul className="w-full flex flex-col gap-2">
-            <Link href="/emails" className="">
+            <Link href="/emails">
               <li className="w-full p-2 bg-white rounded shadow flex justify-start items-center">
                 Compose Email
               </li>
             </Link>
-            <Link href="/emails/templates" className="">
+            <Link href="/emails/templates">
               <li className="w-full p-2 bg-white rounded shadow flex justify-start items-center">
                 Templates
               </li>
