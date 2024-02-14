@@ -10,9 +10,9 @@ export default function Navbar(props: any) {
       <div className="text-white">TidalMail</div>
       <div className="flex items-center">
         <SignIn />
-        <button className="m-2 p-3 bg-white rounded-full text-black shadow">
+        {/* <button className="m-2 p-3 bg-white rounded-full text-black shadow">
           Register
-        </button>
+        </button> */}
       </div>
     </nav>
   );

@@ -68,10 +68,10 @@ export default function Clients() {
               <span className="truncate px-2">
                 <a href="">www.Linkedin.com/Zamaphungula</a>
               </span>
-              <span className="truncate px-2">zamap708@gmail.com</span>
-              <span className="truncate px-2">zamafphungula@gmail.com</span>
-              <span className="truncate px-2">0670112811</span>
-              <span className="truncate px-2">0670112811</span>
+              <span className="truncate px-2">zamaexamplep708@gmail.com</span>
+              <span className="truncate px-2">zamaexamplefphungula@gmail.com</span>
+              <span className="truncate px-2">067045645615</span>
+              <span className="truncate px-2">067045645615</span>
             </div>
           </div>
         </div>
