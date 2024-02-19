@@ -4,34 +4,20 @@ import { firebaseApp } from "./firebase";
 import { cookies } from "next/headers";
 // import { useRouter } from "next/navigation";
 
-export async function test() {
-  const auth = getAuth(firebaseApp);
-  const user = auth.currentUser;
-  user ? console.log(user.uid) : console.log("NO USER FOUND");
-  const res = NextResponse.next();
-  console.log(user);
-  // middletest(user)
-}
-const middletest = async () => {
-  const res = NextResponse.next();
-  res.cookies.set("Hello", "World");
-  return res;
-};
-
 export const signIn = async () => {
   const auth = getAuth(firebaseApp); //Get the Firebase Auth instance
   signInWithPopup(auth, new GoogleAuthProvider())
     .then((result) => {
       // This gives you a Google Access Token. You can use it to access the Google API.
       const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
+        //   const token = credential.accessToken;
+        const token = "TOKEN"
       // The signed-in user info.
       const user = result.user;
-      console.log(user.displayName);
+    //   console.log(user);
       // IdP data available using getAdditionalUserInfo(result)
       // ...
-      setUidCookie(token);
-      setUser("saa", "user.uid", "token");
+      setUserCookie(user, token);
     })
     .catch((error) => {
       // Handle Errors here.
@@ -45,11 +31,19 @@ export const signIn = async () => {
     });
 };
 
-const setUidCookie = async (token: string) => {
-  const data = await fetch("http://localhost:3000/api/auth",
-      {
-          method: "POST",
-          body: JSON.stringify(token)
+const setUserCookie = async (user, token) => {
+  const data = await fetch("http://localhost:3000/api/auth", {
+    method: "POST",
+    body: JSON.stringify({user, token}),
   });
-  console.log(data);
+    console.log(data);
+};
+
+export const getUserCookie = async () => {
+//   const data = await fetch("http://localhost:3000/api/auth", {
+//     method: "GET",
+//   });
+    //     return data
+//   const username = cookies().get('session')?.value;
+    // return username
 };
