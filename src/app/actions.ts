@@ -4,17 +4,19 @@ import { firebaseApp } from "./firebase";
 import { cookies } from "next/headers";
 // import { useRouter } from "next/navigation";
 
+const url = "http://localhost:3000/api/";
+
 export const signIn = async () => {
   const auth = getAuth(firebaseApp); //Get the Firebase Auth instance
   signInWithPopup(auth, new GoogleAuthProvider())
     .then((result) => {
       // This gives you a Google Access Token. You can use it to access the Google API.
       const credential = GoogleAuthProvider.credentialFromResult(result);
-        //   const token = credential.accessToken;
-        const token = "TOKEN"
+      //   const token = credential.accessToken;
+      const token = "TOKEN";
       // The signed-in user info.
       const user = result.user;
-    //   console.log(user);
+      //   console.log(user);
       // IdP data available using getAdditionalUserInfo(result)
       // ...
       setUserCookie(user, token);
@@ -32,18 +34,24 @@ export const signIn = async () => {
 };
 
 const setUserCookie = async (user, token) => {
-  const data = await fetch("http://localhost:3000/api/auth", {
+  const data = await fetch(url + "auth", {
     method: "POST",
-    body: JSON.stringify({user, token}),
+    body: JSON.stringify({ user, token }),
   });
-    console.log(data);
+  console.log(data);
 };
 
 export const getUserCookie = async () => {
-//   const data = await fetch("http://localhost:3000/api/auth", {
-//     method: "GET",
-//   });
-    //     return data
-//   const username = cookies().get('session')?.value;
-    // return username
+  //   const data = await fetch("http://localhost:3000/api/auth", {
+  //     method: "GET",
+  //   });
+  //     return data
+  //   const username = cookies().get('session')?.value;
+  // return username
+};
+
+export const getClients = async () => {
+  const data = await fetch(url + "clients");
+  console.log("GOT CLIENTS: " + data)
+  return data
 };

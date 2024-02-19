@@ -2,12 +2,17 @@
 
 import React, { useState } from "react";
 import AddClient from "./AddClient";
+import ClientComponent from "./ClientComponent";
+import { getClients } from "../actions";
 
 export default function Clients() {
   const [showModal, setShowModal] = useState<boolean>(false);
   const handleModal = () => {
     setShowModal(!showModal);
   };
+
+  const data = getClients().then(res => res)
+  console.log(data)
   return (
     <section className="p-6 w-full h-full flex flex-col gap-8 bg-white/50">
       {showModal ? <AddClient handleModal={handleModal} /> : ""}
@@ -50,30 +55,7 @@ export default function Clients() {
         </div>
         <div className="w-full p-1 bg-white rounded">
           {/*Clients will be fetched from server */}
-          <div className="w-full flex items-center justify-start">
-            <span className="h-full flex justify-start items-center gap-2 px-2">
-              <input
-                type="checkbox"
-                name="ClientselectAll"
-                id="ClientselectAll"
-                className="h-full"
-              />
-              <label htmlFor="ClientselectAll"></label>
-            </span>
-            <div className="w-full grid grid-cols-8">
-              {/* all truncated values must have a tooltip on hover for full value */}
-              <span className="truncate px-2">1</span>
-              <span className="truncate px-2">Zama</span>
-              <span className="truncate px-2">Phungula</span>
-              <span className="truncate px-2">
-                <a href="">www.Linkedin.com/Zamaphungula</a>
-              </span>
-              <span className="truncate px-2">zamaexamplep708@gmail.com</span>
-              <span className="truncate px-2">zamaexamplefphungula@gmail.com</span>
-              <span className="truncate px-2">067045645615</span>
-              <span className="truncate px-2">067045645615</span>
-            </div>
-          </div>
+          <ClientComponent />
         </div>
       </div>
     </section>
