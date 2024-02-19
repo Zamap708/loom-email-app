@@ -1,7 +1,14 @@
+"use client"
 import React from "react";
 import Link from "next/link";
 
+import { getAuth } from "firebase/auth";
+import { firebaseApp } from "../firebase";
+
 export default function Dashboard() {
+  const auth = getAuth(firebaseApp);
+  const user = auth.currentUser;
+  console.log(user)
   return (
     <section className="p-6 w-full h-full flex flex-col gap-8 bg-white/50">
       <div className="w-full h-10 flex items-center justify-between">
@@ -11,7 +18,7 @@ export default function Dashboard() {
       </div>
 
       <div className="">
-        <h1>Welcome, User!</h1>
+        <h1>Welcome, {user?.displayName}!</h1>
       </div>
 
       <div className="w-full grid grid-flow-col auto-cols-auto gap-4 overflow-y-auto">

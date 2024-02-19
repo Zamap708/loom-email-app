@@ -13,7 +13,7 @@ export default function Settings() {
 
   useEffect(() => {
     // Define content function to fetch data
-    const content = async (number) => {
+    const content = async (number: number) => {
       try {
         const response = await FetchData(number); // Call FetchData asynchronously with the current counter value
         setData(response); // Update data state with the fetched data
