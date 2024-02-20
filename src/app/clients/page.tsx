@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import React, { useState } from "react";
 import AddClient from "./AddClient";
@@ -6,16 +6,14 @@ import ClientComponent from "./ClientComponent";
 import { getClients } from "../actions";
 
 export default function Clients() {
-  const [showModal, setShowModal] = useState<boolean>(false);
-  const handleModal = () => {
-    setShowModal(!showModal);
-  };
+  // const [showModal, setShowModal] = useState<boolean>(false);
+  // const handleModal = () => {
+  //   setShowModal(!showModal);
+  // };
 
-  const data = getClients().then(res => res)
-  console.log(data)
   return (
     <section className="p-6 w-full h-full flex flex-col gap-8 bg-white/50">
-      {showModal ? <AddClient handleModal={handleModal} /> : ""}
+      {/* {showModal ? <AddClient handleModal={handleModal} /> : ""} */}
       <div className="w-full h-10 px-2 py-8 flex items-center justify-between bg-white/50 rounded">
         <div className="flex items-center justify-between">
           <h1>Clients</h1>
@@ -23,7 +21,7 @@ export default function Clients() {
         <div className="flex items-center justify-between gap-4">
           <button
             className="p-2 px-4 shadow bg-sky-400 text-white rounded"
-            onClick={handleModal}
+            // onClick={handleModal}
           >
             Add Client
           </button>
