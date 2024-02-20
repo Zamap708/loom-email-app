@@ -8,7 +8,10 @@ export default async function ClientComponent() {
   // console.log(data[0])
   const content = data.map((client: any) => {
     return (
-      <div className="w-full flex items-center justify-start" key={1}>
+      <div
+        className="w-full p-1 flex items-center justify-start bg-white rounded"
+        key={1}
+      >
         <span className="h-full flex justify-start items-center gap-2 px-2">
           <input
             type="checkbox"
@@ -28,11 +31,13 @@ export default async function ClientComponent() {
           </span>
           <span className="truncate px-2">{client.docData.email.personal}</span>
           <span className="truncate px-2">{client.docData.email.work}</span>
-          <span className="truncate px-2">{client.docData.number.personal}</span>
+          <span className="truncate px-2">
+            {client.docData.number.personal}
+          </span>
           <span className="truncate px-2">{client.docData.number.work}</span>
         </div>
       </div>
     );
   });
-  return <>{content}</>;
+  return <ul className="flex flex-col gap-1">{content}</ul>;
 }

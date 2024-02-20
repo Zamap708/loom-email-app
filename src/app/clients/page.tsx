@@ -51,7 +51,7 @@ export default function Clients() {
             <span className="px-2">Work Number</span>
           </div>
         </div>
-        <div className="w-full p-1 bg-white rounded">
+        <div className="w-full">
           {/*Clients will be fetched from server */}
           <ClientComponent />
         </div>
